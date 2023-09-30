@@ -113,7 +113,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
     try:
         phone_code_msg = None
         if not is_bot:
-            phone_code_msg = await bot.ask(user_id, "᥀︙ 𝖯𝖫𝖤𝖠𝖲𝖤 𝖲𝖤𝖭𝖣 𝖳𝖧𝖤 𝖮𝖳𝖯 𝖳𝖧𝖠𝖳 𝖸𝖮𝖴'𝖵𝖤 𝖱𝖤𝖢𝖤𝖨𝖵𝖤𝖣 𝖥𝖱𝖮𝖬 𝖳𝖤𝖫𝖤𝖳𝖧𝖮𝖭 𝖮𝖭  𝖸𝖮𝖴𝖱 𝖠𝖢𝖢𝖮𝖴𝖭𝖳.\n𝖨𝖥 𝖮𝖳𝖯 𝖨𝖲 `1 2 3 4 5` ︙᥀", filters=filters.text, timeout=600)
+            phone_code_msg = await bot.ask(user_id, "᥀︙ ارسل الكود \nكمثال `1 2 3 4 5` ︙᥀", filters=filters.text, timeout=600)
             if await cancelled(phone_code_msg):
                 return
     except TimeoutError:
