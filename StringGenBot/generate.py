@@ -30,20 +30,20 @@ ask_ques = "**⎊ ذا كنـت تـريد تنـصيـب سـورس مـيوز�
 
 buttons_ques = [
     [
-        KeyboardButton("❬ بـايـࢪوجـࢪام ❭", callback_data="pyrogram"),
+        InlineKeyboardButton("❬ بـايـࢪوجـࢪام ❭", callback_data="pyrogram"),
     ],
     [
-        KeyboardButton("❬ تـيـلـثـون ❭", callback_data="telethon"),
+        InlineKeyboardButton("❬ تـيـلـثـون ❭", callback_data="telethon"),
     ],
     [
-        KeyboardButton("❬ بـايـࢪوجـࢪام بـوت ❭", callback_data="pyrogram_bot"),
-        KeyboardButton("❬ تـيـلـثـون بـوت ❭", callback_data="telethon_bot"),
+        InlineKeyboardButton("❬ بـايـࢪوجـࢪام بـوت ❭", callback_data="pyrogram_bot"),
+        InlineKeyboardButton("❬ تـيـلـثـون بـوت ❭", callback_data="telethon_bot"),
     ],
 ]
 
 gen_button = [
     [
-        KeyboardButton(text="⦓ بـدء اسـتـخـࢪاج جـلـسـة ⦔", callback_data="generate")
+        InlineKeyboardButton(text="⦓ بـدء اسـتـخـࢪاج جـلـسـة ⦔", callback_data="generate")
     ]
 ]
 
