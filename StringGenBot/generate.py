@@ -23,24 +23,21 @@ from telethon.errors import (
 
 import config
 
-
-
-ask_ques = "**᥀︙ اختر احد جلسات ︙᥀**"
-buttons_ques = [
-    [
-        InlineKeyboardButton("᥀︙ بايروجرام ︙᥀", callback_data="pyrogram"),
-        InlineKeyboardButton("᥀︙ تيليثون ︙᥀", callback_data="telethon"),
+@app.on_message(filters.command("start") & filters.private)
+async def start_msg(app, message):
+      reply_markup = ReplyKeyboardMarkup(
+        [
+          [
+            KeyboardButton ("بـايـروجـرام"), KeyboardButton ("تـيـلـيـثـون")
+          ],
+          [KeyboardButton ("مـعـلـومـات عـن الـبـوت")]
+        ],
+        resize_keyboard=True, placeholder='استخراج جلسات'
+      )
+      await message.reply('''**
+مرحبا بك عزيزي {}\n⎊ ذا كنـت تـريد تنـصيـب سـورس مـيوزك\n⎊ فـأسـتـخـࢪج جـلـسـة بـايـروجـرام\n⎊ واذا تـريـد تنـصـيب سـورس تـيلـثون\n⎊ فـأسـتـخـࢪج جـلـسـة تـيـرمـكـس\n⎊ اذا كـان سـورسك مـتحـدث مع اخـر\n⎊ تحديثات البايروجرام فأختار بايروجرام v2
+'''.format(message.from_user.mention), reply_markup=reply_markup, quote=True)
     ],
-    [
-        InlineKeyboardButton("᥀︙ بايروجرام بوت ︙᥀", callback_data="pyrogram_bot"),
-        InlineKeyboardButton("᥀︙ تيليثون بوت ︙᥀", callback_data="telethon_bot"),
-    ],
-]
-
-gen_button = [
-    [
-        InlineKeyboardButton(text="᥀︙ بدء استخراج الجلسة ︙᥀", callback_data="generate")
-    ]
 ]
 
 
