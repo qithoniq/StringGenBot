@@ -50,9 +50,9 @@ async def main(_, msg):
 
 async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bool = False):
     if telethon:
-        ty = "تيليثون"
+        ty = "تـيـلـيـثـون"
     else:
-        ty = "بايروجرام"
+        ty = "بـايـروجـرام"
     if is_bot:
         ty += " بوت"
     await msg.reply(f"» 𝖳𝖱𝖸𝖨𝖭𝖦 𝖳𝖮 𝖲𝖳𝖠𝖱𝖳 **{ty}** 𝖲𝖤𝖲𝖲𝖨𝖮𝖭 𝖦𝖤𝖭𝖤𝖱𝖠𝖳𝖮𝖱...")
