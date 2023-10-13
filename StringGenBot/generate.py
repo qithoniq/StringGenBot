@@ -12,14 +12,6 @@ from pyrogram.errors import (
     SessionPasswordNeeded,
     PasswordHashInvalid
 )
-from old_pyro.errors import (
-    ApiIdInvalid,
-    PhoneNumberInvalid,
-    PhoneCodeInvalid,
-    PhoneCodeExpired,
-    SessionPasswordNeeded,
-    PasswordHashInvalid
-)
 from telethon.errors import (
     ApiIdInvalidError,
     PhoneNumberInvalidError,
@@ -38,8 +30,7 @@ ask_ques = "**⎊ ذا كنـت تـريد تنـصيـب سـورس مـيوز�
 
 buttons_ques = [
     [
-        KeyboardButton("❬ بـايـࢪوجـࢪام ❭", callback_data="old_pyro"),
-        KeyboardButton("❬ بـايـࢪوجـࢪام v2 ❭", callback_data="pyrogram"),
+        KeyboardButton("❬ بـايـࢪوجـࢪام ❭", callback_data="pyrogram"),
     ],
     [
         KeyboardButton("❬ تـيـلـثـون ❭", callback_data="telethon"),
