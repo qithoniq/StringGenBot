@@ -21,12 +21,12 @@
     "API_ID": {
       "description": "Get this value from my.telegram.org/apps.",
       "required": true,
-      "value": ""
+      "value": "17211426"
     },
     "API_HASH": {
       "description": "Get this value from my.telegram.org/apps.",
       "required": true,
-      "value": ""
+      "value": "656a097533402eb717ba82298a752177"
     },
     "OWNER_ID": {
       "description": "Telegram id of the person who will known as owner of the bot.",
@@ -41,7 +41,7 @@
     "MUST_JOIN": {
       "description": "Username of a group or channel for which you want to set force sub.(without @)",
       "required": true,
-      "value": "DevilsHeavenMF"
+      "value": "Matrixthon"
     },
     "BOT_TOKEN": {
       "description": "Get this value from @BotFather",
