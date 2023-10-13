@@ -23,7 +23,7 @@ from telethon.errors import (
 
 import config
 
-@@Client.on_message(filters.command("start") & filters.private)
+@Client.on_message(filters.command("start") & filters.private)
 async def start_msg(app, message):
       reply_markup = ReplyKeyboardMarkup(
         [
