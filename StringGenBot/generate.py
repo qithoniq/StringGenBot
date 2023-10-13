@@ -12,13 +12,13 @@ from pyrogram.errors import (
     SessionPasswordNeeded,
     PasswordHashInvalid
 )
-from pyrogram1.errors import (
-    ApiIdInvalid as ApiIdInvalid1,
-    PhoneNumberInvalid as PhoneNumberInvalid1,
-    PhoneCodeInvalid as PhoneCodeInvalid1,
-    PhoneCodeExpired as PhoneCodeExpired1,
-    SessionPasswordNeeded as SessionPasswordNeeded1,
-    PasswordHashInvalid as PasswordHashInvalid1
+from old_pyro.errors import (
+    ApiIdInvalid,
+    PhoneNumberInvalid,
+    PhoneCodeInvalid,
+    PhoneCodeExpired,
+    SessionPasswordNeeded,
+    PasswordHashInvalid
 )
 from telethon.errors import (
     ApiIdInvalidError,
