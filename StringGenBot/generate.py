@@ -1,9 +1,10 @@
 from pyrogram.types import Message
 from telethon import TelegramClient
 from pyrogram import Client, filters
+from pyrogram1 import Client as Client1
 from asyncio.exceptions import TimeoutError
 from telethon.sessions import StringSession
-from pyrogram.types import InlineKeyboardMarkup, KeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import (
     ApiIdInvalid,
     PhoneNumberInvalid,
@@ -11,6 +12,14 @@ from pyrogram.errors import (
     PhoneCodeExpired,
     SessionPasswordNeeded,
     PasswordHashInvalid
+)
+from pyrogram1.errors import (
+    ApiIdInvalid as ApiIdInvalid1,
+    PhoneNumberInvalid as PhoneNumberInvalid1,
+    PhoneCodeInvalid as PhoneCodeInvalid1,
+    PhoneCodeExpired as PhoneCodeExpired1,
+    SessionPasswordNeeded as SessionPasswordNeeded1,
+    PasswordHashInvalid as PasswordHashInvalid1
 )
 from telethon.errors import (
     ApiIdInvalidError,
@@ -25,12 +34,13 @@ import config
 
 
 
-ask_ques = "**⎊ ذا كنـت تـريد تنـصيـب سـورس مـيوزك\n⎊ فـأسـتـخـࢪج جـلـسـة بـايـروجـرام\n⎊ واذا تـريـد تنـصـيب سـورس تـيلـثون\n⎊ فـأسـتـخـࢪج جـلـسـة تـيـرمـكـس\n⎊ اذا كـان سـورسك مـتحـدث مع اخـر\n⎊ تحديثات البايروجرام فأختار بايروجرام v2\n⎊ يـوجـد اسـتـخـرج جـلسـات ل البـوتات :**"
+ask_ques = "**᭡ ذا كنـت تـريد تنـصيـب سـورس مـيوزك\n᭡ فـأسـتـخـࢪج جـلـسـة بـايـروجـرام\n᭡ واذا تـريـد تنـصـيب سـورس تـيلـثون\n᭡ فـأسـتـخـࢪج جـلـسـة تـيـرمـكـس\n᭡ اذا كـان سـورسك مـتحـدث مع اخـر\n᭡ تحديثات البايروجرام فأختار بايروجرام v2\n᭡ يـوجـد اسـتـخـرج جـلسـات لـ البـوتات :**"
 
 
 buttons_ques = [
     [
-        InlineKeyboardButton("❬ بـايـࢪوجـࢪام ❭", callback_data="pyrogram"),
+        InlineKeyboardButton("❬ بـايـࢪوجـࢪام ❭", callback_data="pyrogram1"),
+        InlineKeyboardButton("❬ بـايـࢪوجـࢪام v2 ❭", callback_data="pyrogram"),
     ],
     [
         InlineKeyboardButton("❬ تـيـلـثـون ❭", callback_data="telethon"),
@@ -39,12 +49,6 @@ buttons_ques = [
         InlineKeyboardButton("❬ بـايـࢪوجـࢪام بـوت ❭", callback_data="pyrogram_bot"),
         InlineKeyboardButton("❬ تـيـلـثـون بـوت ❭", callback_data="telethon_bot"),
     ],
-]
-
-gen_button = [
-    [
-        InlineKeyboardButton(text="⦓ بـدء اسـتـخـࢪاج جـلـسـة ⦔", callback_data="generate")
-    ]
 ]
 
 
