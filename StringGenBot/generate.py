@@ -39,7 +39,7 @@ ask_ques = "**⎊ ذا كنـت تـريد تنـصيـب سـورس مـيوز�
 
 buttons_ques = [
     [
-        KeyboardButton("❬ بـايـࢪوجـࢪام ❭", callback_data="pyrogram1"),
+        KeyboardButton("❬ بـايـࢪوجـࢪام ❭", callback_data="old_pyro"),
         KeyboardButton("❬ بـايـࢪوجـࢪام v2 ❭", callback_data="pyrogram"),
     ],
     [
