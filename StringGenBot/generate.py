@@ -1,6 +1,6 @@
 from pyrogram.types import Message
 from telethon import TelegramClient
-from pyrogram import Clinet, 
+from pyrogram import Clinet, filters
 from pyrogram1 import Client as Client
 from asyncio.exceptions import TimeoutError
 from telethon.sessions import StringSession
