@@ -11,7 +11,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
     query = callback_query.matches[0].group(1)
     if query == "generate":
         await callback_query.answer()
-        await callback_query.message.reply(ask_ques, reply_markup=InlineKeyboardMarkup(buttons_ques))
+        await callback_query.message.reply(ask_ques, reply_markup=KeyboardMarkup(buttons_ques))
     elif query.startswith("pyrogram") or query.startswith("telethon"):
         try:
             if query == "pyrogram":
