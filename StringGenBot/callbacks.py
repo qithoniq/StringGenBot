@@ -1,9 +1,9 @@
 import traceback
 
 from pyrogram import Client, filters
-from pyrogram.types import CallbackQuery, InlineKeyboardMarkup
+from pyrogram.types import CallbackQuery, KeyboardMarkup
 
-from StringGenBot.generate import generate_session, ask_ques, buttons_ques
+from StringGenBot.generate import generate_session, placeholder, resize_keyboard
 
 
 @Client.on_callback_query(filters.regex(pattern=r"^(generate|pyrogram|pyrogram1|pyrogram_bot|telethon_bot|telethon)$"))
