@@ -1,7 +1,6 @@
 import traceback
 
 from pyrogram import Client, filters
-from pyrogram.types import CallbackQuery, KeyboardMarkup
 
 from StringGenBot.generate import generate_session, placeholder, resize_keyboard
 
