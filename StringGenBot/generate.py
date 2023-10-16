@@ -56,7 +56,7 @@ async def start_msg(Client, message):
 
 @Client.on_message(filters.private & ~filters.forwarded & filters.command(["generate", "gen", "string", "str"]))
 async def main(_, msg):
-    await msg.reply(ask_ques, reply_markup=KeyboardMarkup(resize_keyboard))
+    await msg.reply(placeholder, resize_keyboard=KeyboardMarkup(resize_keyboard))
 
 
 async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: bool = False, is_bot: bool = False):
