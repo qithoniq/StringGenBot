@@ -10,7 +10,6 @@ from time import time
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from config import OWNER_ID
 
 
 async def aexec(code, client, message):
@@ -29,13 +28,11 @@ async def edit_or_reply(msg: Message, **kwargs):
 
 @Client.on_edited_message(
     filters.command("eval")
-    & filters.user(OWNER_ID)
     & ~filters.forwarded
     & ~filters.via_bot
 )
 @Client.on_message(
     filters.command("eval")
-    & filters.user(OWNER_ID)
     & ~filters.forwarded
     & ~filters.via_bot
 )
@@ -75,10 +72,10 @@ async def executor(client, message):
         with open(filename, "w+", encoding="utf8") as out_file:
             out_file.write(str(evaluation.strip()))
         t2 = time()
-        keyboard = InlineKeyboardMarkup(
+        keyboard = KeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(
+                    KeyboardButton(
                         text="⏳",
                         callback_data=f"runtime {t2-t1} Seconds",
                     )
@@ -95,10 +92,10 @@ async def executor(client, message):
         os.remove(filename)
     else:
         t2 = time()
-        keyboard = InlineKeyboardMarkup(
+        keyboard = KeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(
+                    KeyboardButton(
                         text="🗑",
                         callback_data=f"forceclose abc|{message.from_user.id}",
                     ),
@@ -133,12 +130,7 @@ async def forceclose_command(_, CallbackQuery):
         return
 
 
-@Client.on_edited_message(
-    filters.command("sh") & filters.user(OWNER_ID) & ~filters.forwarded & ~filters.via_bot
-)
-@Client.on_message(
-    filters.command("sh") & filters.user(OWNER_ID) & ~filters.forwarded & ~filters.via_bot
-)
+
 async def shellrunner(client, message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="**ᴇxᴀᴍᴩʟᴇ :**\n/sh git pull")
