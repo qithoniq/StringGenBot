@@ -33,26 +33,30 @@ from telethon.errors import (
 import config
 
 
-
-ask_ques = "**᭡ ذا كنـت تـريد تنـصيـب سـورس مـيوزك\n᭡ فـأسـتـخـࢪج جـلـسـة بـايـروجـرام\n᭡ واذا تـريـد تنـصـيب سـورس تـيلـثون\n᭡ فـأسـتـخـࢪج جـلـسـة تـيـرمـكـس\n᭡ اذا كـان سـورسك مـتحـدث مع اخـر\n᭡ تحديثات البايروجرام فأختار بايروجرام v2\n᭡ يـوجـد اسـتـخـرج جـلسـات لـ البـوتات :**"
-
-
-buttons_ques = [
-    [
+@Client.on_message(filters.command("start") & filters.private)
+async def start_msg(Client, message):
+      reply_markup = ReplyKeyboardMarkup(
+        [
+          [
         KeyboardButton ("تـيـلـثـون"),
         KeyboardButton ("بـايـࢪوجـࢪام"), 
         KeyboardButton ("بـايـࢪوجـࢪام v2"),
         KeyboardButton ("بـايـࢪوجـࢪام بـوت"),
         KayboardButton ("بـايـࢪوجـࢪام بوت")
-    ],
-]
-
+          ],
+          [KeyboardButton ("مـعـلـومـات عـن الـبـوت")]
+        ],
+        resize_keyboard=True, placeholder='استخراج جلسات'
+      )
+      await message.reply('''**
+مرحبا بك عزيزي {}\n⎊ ذا كنـت تـريد تنـصيـب سـورس مـيوزك\n⎊ فـأسـتـخـࢪج جـلـسـة بـايـروجـرام\n⎊ واذا تـريـد تنـصـيب سـورس تـيلـثون\n⎊ فـأسـتـخـࢪج جـلـسـة تـيـرمـكـس\n⎊ اذا كـان سـورسك مـتحـدث مع اخـر\n⎊ تحديثات البايروجرام فأختار بايروجرام v2
+'''.format(message.from_user.mention), reply_markup=reply_markup, quote=True)
 
 
 
 @Client.on_message(filters.private & ~filters.forwarded & filters.command(["generate", "gen", "string", "str"]))
 async def main(_, msg):
-    await msg.reply(ask_ques, reply_markup=KeyboardMarkup(buttons_ques))
+    await msg.reply(ask_ques, reply_markup=KeyboardMarkup(resize_keyboard))
 
 
 async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: bool = False, is_bot: bool = False):
